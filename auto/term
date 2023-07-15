@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+cd "$(dirname "$0")"/..
+
+. .env
+
+webrepl_cli -p "${REPL_PASSWORD}" "${REPL_HOST}"

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+cd "$(dirname "$0")"/..
+
+. .env
+
+echo "" > data.txt
+webrepl_cli -p "${REPL_PASSWORD}" data.txt "${REPL_HOST}":data.txt
